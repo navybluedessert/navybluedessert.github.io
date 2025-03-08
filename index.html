@@ -1,1 +1,195 @@
-Hello World
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navyblue | 自然系蛋糕工坊</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background-color: #1f3b5f;
+            color: #ffffff;
+        }
+
+        /* 导航样式 */
+        nav {
+            background-color: #162a4d;
+            padding: 20px 50px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            color: #f8c291;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* 首屏大图 */
+        .hero {
+            height: 600px;
+            background: linear-gradient(rgba(15, 30, 50, 0.6), rgba(15, 30, 50, 0.6)),
+                        url('https://images.unsplash.com/photo-1602192806305-6130d87d4c95');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 60px;
+        }
+
+        .hero-text {
+            text-align: center;
+            color: #f8c291;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        /* 产品展示区 */
+        .products {
+            padding: 80px 50px;
+            background-color: #2c4b7d;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(255,255,255,0.2);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .product-info {
+            padding: 20px;
+            color: #1f3b5f;
+        }
+
+        .product-name {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #f8c291;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+            
+            .hero {
+                height: 400px;
+            }
+            
+            .hero-text h1 {
+                font-size: 36px;
+            }
+            
+            .products {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">🍰 Navyblue</div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-text">
+            <h1>自然之味 甜蜜时光</h1>
+            <p>当日现烤 · 新鲜配送</p>
+        </div>
+    </div>
+
+    <section class="products">
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587')"></div>
+                <div class="product-info">
+                    <h3 class="product-name">蓝莓芝士蛋糕</h3>
+                    <p class="product-price">¥188/6寸</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1602192806305-6130d87d4c95')"></div>
+                <div class="product-info">
+                    <h3 class="product-name">皇家巧克力蛋糕</h3>
+                    <p class="product-price">¥198/6寸</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1599785209707-cc9a5916c140')"></div>
+                <div class="product-info">
+                    <h3 class="product-name">梦幻草莓奶油蛋糕</h3>
+                    <p class="product-price">¥208/6寸</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1606890737304-06624b17c4c7')"></div>
+                <div class="product-info">
+                    <h3 class="product-name">焦糖榛子蛋糕</h3>
+                    <p class="product-price">¥218/6寸</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1602511806101-88c9a143c9f9')"></div>
+                <div class="product-info">
+                    <h3 class="product-name">柠檬清香蛋糕</h3>
+                    <p class="product-price">¥178/6寸</p>
+                </div>       
+            </div>
+          
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1602511806101-88c9a143c9f9')"></div>
+                <div class="product-info">
+                    <h3 class="product-name">巧克力蛋糕</h3>
+                    <p class="product-price">¥178/6寸</p>
+                </div>
+          
+        </div>
+    </section>
+</body>
+</html>
+

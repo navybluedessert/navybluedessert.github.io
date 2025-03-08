@@ -93,6 +93,7 @@
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
             font-weight: 600;
+            text-align: center;
         }
 
         .product-desc {
@@ -270,6 +271,43 @@
     }
 }
 
+.info-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.info-card {
+    background: var(--navy);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+}
+
+.info-title {
+    font-size: 1.6rem;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.info-text {
+    font-size: 1rem;
+    color: var(--cream);
+    line-height: 1.6;
+}
+
 
     </style>
 </head>
@@ -285,6 +323,8 @@
         </div>
     </div>
 
+
+
     <h2 class="category-title">Menu</h2>
     <section class="intro-section">
         <div class="intro-image">
@@ -294,8 +334,33 @@
             <h2>关于 NavyBlue</h2>
             <p>我们是一家用心制作的私房蛋糕店，用最好的食材和手工工艺，做出每一款细腻、醇香的蛋糕。我们相信，美味的蛋糕不仅仅是一种甜点，更是一种能带来幸福感的味道。</p>
             <p>无论是和家人一起分享，还是送给特别的人，我们都希望 NavyBlue 的蛋糕，能让你的生活多一点甜蜜和仪式感。 💙</p>
+            <p>📞 预定电话: 267-582-1926</p>
+            <p>📱 微信: NB-Dessert </p>
         </div>
     </section>
+
+    <section class="info-section">
+        <div class="info-grid">
+            <!-- 🍰 蛋糕样式 -->
+            <div class="info-card">
+                <h3 class="info-title">🍰 蛋糕样式</h3>
+                <p class="info-text">多种口味与造型，包括经典、节日特别款。也欢迎来图定制。</p>
+            </div>
+    
+            <!-- 📅 预定方式 -->
+            <div class="info-card">
+                <h3 class="info-title">📅 预定方式</h3>
+                <p class="info-text">微信 / 电话 / 小红书，提前24小时预订，确保新鲜现烤。</p>
+            </div>
+    
+            <!-- 🚚 配送 -->
+            <div class="info-card">
+                <h3 class="info-title">🚚 配送</h3>
+                <p class="info-text">覆盖费城市区主要区域，配送费按距离收取，或者南费城自取。</p>
+            </div>
+        </div>
+    </section>
+    
     
     <main class="menu-container">
         <h2 class="category-title">经典蛋糕系列</h2>
@@ -363,7 +428,7 @@
             <article class="product-card">
                 <div class="product-image" style="background-image: url('./images/christmas.jpg')"></div>
                 <div class="product-info">
-                    <h3 class="product-title">圣诞定制</h3>
+                    <h3 class="product-title">圣诞节定制</h3>
                     <!-- <p class="product-desc">法式传统蒙布朗，意大利栗子泥，朗姆酒风味</p > -->
                     <div class="product-price">
                         <!-- <span>¥248/6寸</span> -->

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NavyBlue | 法式精品蛋糕</title>
+    <title>NavyBlue | Philly </title>
     <style>
         :root {
             --navy: #1a2b3c;
@@ -65,13 +65,23 @@
         .product-card:hover {
             transform: translateY(-5px);
         }
-
+/* 
         .product-image {
             height: 250px;
             background-size: cover;
             background-position: center;
             position: relative;
-        }
+        } */
+        .product-image {
+    width: 100%;
+    height: 250px;
+    background-size: contain; /* Ensures full image is visible */
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
         .product-info {
             padding: 1.5rem;
@@ -190,7 +200,7 @@
 .hero {
             height: 600px;
             background: linear-gradient(rgba(15, 30, 50, 0.6), rgba(15, 30, 50, 0.6)),
-                        url('/Users/zhangb1/Downloads/mainpage.jpg');
+                        url('./images/backgroud.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -209,26 +219,90 @@
             margin-bottom: 20px;
         }
 
+        .intro-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 3rem 5%;
+}
+
+.intro-image {
+    flex: 1;
+    max-width: 50%;
+}
+
+.intro-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.intro-text {
+    flex: 1;
+    max-width: 50%;
+}
+
+.intro-text h2 {
+    font-size: 2rem;
+    color: var(--navy);
+    margin-bottom: 1rem;
+}
+
+.intro-text p {
+    font-size: 1rem;
+    color: var(--light-navy);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Mobile Responsive: Stack Image and Text */
+@media (max-width: 768px) {
+    .intro-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-image, .intro-text {
+        max-width: 100%;
+    }
+}
+
+
     </style>
 </head>
 <body>
     <header class="header">
-        <div class="logo">NAVYBLUE</div>
+        <div class="logo">NAVYBLUE | PHILLY</div>
     </header>
 
     <div class="hero">
         <div class="hero-text">
-            <h1>自然之味 甜蜜时光</h1>
+            <h1>Welcome to NavyBlue</h1>
             <p>当日现烤 · 新鲜配送</p>
         </div>
     </div>
 
+    <h2 class="category-title">Menu</h2>
+    <section class="intro-section">
+        <div class="intro-image">
+            <img src="./images/menu.jpg" alt="NavyBlue Bakery">
+        </div>
+        <div class="intro-text">
+            <h2>关于 NavyBlue</h2>
+            <p>我们是一家用心制作的私房蛋糕店，用最好的食材和手工工艺，做出每一款细腻、醇香的蛋糕。我们相信，美味的蛋糕不仅仅是一种甜点，更是一种能带来幸福感的味道。</p>
+            <p>无论是和家人一起分享，还是送给特别的人，我们都希望 NavyBlue 的蛋糕，能让你的生活多一点甜蜜和仪式感。 💙</p>
+        </div>
+    </section>
+    
     <main class="menu-container">
         <h2 class="category-title">经典蛋糕系列</h2>
         <div class="menu-grid">
             <!-- 产品1 -->
             <article class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1557925923-cd4648e211a0')"></div>
+                <div class="product-image" style="background-image: url('./images/aoliao.jpg')"></div>
                 <div class="product-info">
                     <h3 class="product-title">法式黑森林</h3>
                     <p class="product-desc">进口黑樱桃与70%黑巧克力完美融合，搭配香缇奶油</p >
@@ -240,7 +314,7 @@
 
             <!-- 产品2 -->
             <article class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587')"></div>
+                <div class="product-image" style="background-image: url('./images/qiaokeli.jpg')"></div>
                 <div class="product-info">
                     <h3 class="product-title">皇家红丝绒</h3>
                     <p class="product-desc">经典红丝绒蛋糕胚搭配奶油奶酪霜，顶部装饰金箔</p >
@@ -252,7 +326,7 @@
 
             <!-- 产品3 -->
             <article class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1586444248902-2f64eddc13df')"></div>
+                <div class="product-image" style="background-image: url('./images/flower.jpg')"></div>
                 <div class="product-info">
                     <h3 class="product-title">香草慕斯星空</h3>
                     <p class="product-desc">马达加斯加香草慕斯，镜面淋面工艺，食用金粉装饰</p >
@@ -264,7 +338,7 @@
 
             <!-- 产品4 -->
             <article class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec')"></div>
+                <div class="product-image" style="background-image: url('./images/baofu.jpg')"></div>
                 <div class="product-info">
                     <h3 class="product-title">栗子蒙布朗</h3>
                     <p class="product-desc">法式传统蒙布朗，意大利栗子泥，朗姆酒风味</p >
@@ -275,7 +349,7 @@
             </article>
                         <!-- 产品4 -->
             <article class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec')"></div>
+                <div class="product-image" style="background-image: url('./images/birthday1.jpg')"></div>
                 <div class="product-info">
                     <h3 class="product-title">栗子蒙布朗</h3>
                     <p class="product-desc">法式传统蒙布朗，意大利栗子泥，朗姆酒风味</p >
@@ -287,7 +361,7 @@
 
             <!-- 产品4 -->
             <article class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec')"></div>
+                <div class="product-image" style="background-image: url('./images/christmas.jpg')"></div>
                 <div class="product-info">
                     <h3 class="product-title">栗子蒙布朗</h3>
                     <p class="product-desc">法式传统蒙布朗，意大利栗子泥，朗姆酒风味</p >
@@ -304,35 +378,24 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <h2>NAVYBLUE</h2>
-                <p>法式匠心 · 甜蜜美味</p>
-            </div>
-
-            <div class="footer-links">
-                <h3>快速导航</h3>
-                <ul>
-                    <li><a href="#">主页</a></li>
-                    <li><a href="#">产品</a></li>
-                    <li><a href="#">关于我们</a></li>
-                    <li><a href="#">联系我们</a></li>
-                </ul>
+                <p>私房匠心 · 甜蜜美味</p>
             </div>
 
             <div class="footer-contact">
                 <h3>联系我们</h3>
-                <p>📞 电话: 400-123-4567</p>
-                <p>📧 邮箱: contact@navyblue.com</p>
+                <p>📞 电话: 267-582-1926</p>
+                <p>📧 邮箱: lavisnets@gmail.com</p>
                 <div class="wechat">
-                    <p>📱 微信客服:</p>
-                    <img src="./images/wechat-qr.png" alt="WeChat QR Code">
+                    <p>📱 微信客服: NB-Dessert </p>
+                    <!-- <img src="./images/WeChat-App-Icon-Logo.wine.png" alt="NB-Dessert"> -->
                 </div>
             </div>
 
             <div class="footer-social">
                 <h3>关注我们</h3>
                 <div class="social-icons">
-                    <a href="#"><img src="./images/wechat-icon.png" alt="WeChat"></a>
-                    <a href="#"><img src="./images/weibo-icon.png" alt="Weibo"></a>
-                    <a href="#"><img src="./images/instagram-icon.png" alt="Instagram"></a>
+                    <!-- <a href="#"><img src="./images/WeChat-App-Icon-Logo.wine.png" alt="WeChat"></a> -->
+                    <a href="https://www.xiaohongshu.com/user/profile/648636af00000000100353af?xsec_token=YBtxRcQeMPTvOKonigakkLCJVAWedVsWQZVbkbGnqh52k=&xsec_source=app_share&xhsshare=CopyLink&appuid=648636af00000000100353af&apptime=1741439296&share_id=b37d600307184b87aefd8b3539d2516f"><img src="./images/xiaohongshu.png" alt="小红书"></a>
                 </div>
             </div>
         </div>

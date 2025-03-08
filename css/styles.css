@@ -1,0 +1,39 @@
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 10px; /* Reduce gap between items */
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px; /* Reduce padding */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.product-image {
+    width: 100%;
+    max-width: 220px; /* Adjust to fit better */
+    height: 180px; /* Adjust height */
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+}
+
+.product-info {
+    padding: 5px 0; /* Reduce padding inside info */
+}
+
+.product-name {
+    margin: 5px 0; /* Reduce space above and below */
+    font-size: 16px; /* Adjust font size */
+}
+
+.product-price {
+    margin: 0; /* Remove extra spacing */
+    font-size: 14px;
+}

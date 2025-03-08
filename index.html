@@ -3,43 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navyblue</title>
+    <title>NavyBlue | 法式精品蛋糕</title>
     <style>
+        :root {
+            --navy: #1a2b3c;
+            --light-navy: #4a667c;
+            --gold: #d4af37;
+            --cream: #f5f1e6;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Microsoft YaHei', sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
 
         body {
-            background-color: #1f3b5f;
-            color: #ffffff;
+            background: var(--cream);
         }
 
-        /* 导航样式 */
-        nav {
-            background-color: #162a4d;
-            padding: 20px 50px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        /* 导航栏 */
+        .header {
+            background: var(--navy);
+            padding: 1rem 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
             width: 100%;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .logo {
-            font-size: 24px;
-            color: #f8c291;
+            color: white;
+            font-size: 2rem;
             font-weight: bold;
             letter-spacing: 2px;
         }
 
-        /* 首屏大图 */
-        .hero {
+        /* 产品展示区 */
+        .menu-container {
+            max-width: 1200px;
+            margin: 100px auto 50px;
+            padding: 0 20px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .product-title {
+            color: var(--navy);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .product-desc {
+            color: var(--light-navy);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .product-price {
+            color: var(--gold);
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .price-icon {
+            width: 20px;
+            margin-right: 8px;
+        }
+
+        /* 分类标题 */
+        .category-title {
+            text-align: center;
+            margin: 3rem 0;
+            color: var(--navy);
+            font-size: 2rem;
+            position: relative;
+        }
+
+        .category-title:after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: var(--gold);
+            margin: 10px auto;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .menu-container {
+                margin-top: 80px;
+            }
+            
+            .product-image {
+                height: 200px;
+            }
+        }
+        .footer {
+    background: var(--navy);
+    color: white;
+    padding: 3rem 5%;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+.footer-brand h2 {
+    font-size: 1.8rem;
+    color: var(--gold);
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-contact img {
+    width: 100px;
+    margin-top: 10px;
+}
+
+.social-icons a img {
+    width: 30px;
+    margin: 5px;
+}
+
+.footer-copy {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.hero {
             height: 600px;
             background: linear-gradient(rgba(15, 30, 50, 0.6), rgba(15, 30, 50, 0.6)),
-                        url('https://images.unsplash.com/photo-1602192806305-6130d87d4c95');
+                        url('/Users/zhangb1/Downloads/mainpage.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -58,79 +209,12 @@
             margin-bottom: 20px;
         }
 
-        /* 产品展示区 */
-        .products {
-            padding: 80px 50px;
-            background-color: #2c4b7d;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .product-card {
-            background: #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(255,255,255,0.2);
-            transition: transform 0.3s ease;
-            text-align: center;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-image {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .product-info {
-            padding: 20px;
-            color: #1f3b5f;
-        }
-
-        .product-name {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .product-price {
-            font-size: 20px;
-            font-weight: bold;
-            color: #f8c291;
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                padding: 15px 20px;
-            }
-            
-            .hero {
-                height: 400px;
-            }
-            
-            .hero-text h1 {
-                font-size: 36px;
-            }
-            
-            .products {
-                padding: 50px 20px;
-            }
-        }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="logo">🍰 Navyblue</div>
-    </nav>
+    <header class="header">
+        <div class="logo">NAVYBLUE</div>
+    </header>
 
     <div class="hero">
         <div class="hero-text">
@@ -139,57 +223,124 @@
         </div>
     </div>
 
-    <section class="products">
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-image" style="background-image: url('./images/qiaokeli.jpg')"></div>
+    <main class="menu-container">
+        <h2 class="category-title">经典蛋糕系列</h2>
+        <div class="menu-grid">
+            <!-- 产品1 -->
+            <article class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1557925923-cd4648e211a0')"></div>
                 <div class="product-info">
-                    <h3 class="product-name">巧克力蛋糕</h3>
-                    <p class="product-price">¥188/6寸</p>
+                    <h3 class="product-title">法式黑森林</h3>
+                    <p class="product-desc">进口黑樱桃与70%黑巧克力完美融合，搭配香缇奶油</p >
+                    <div class="product-price">
+                        <span>¥228/6寸</span>
+                    </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="product-card">
-                <div class="product-image" style="background-image: url('./images/aoliao.jpg')"></div>
+            <!-- 产品2 -->
+            <article class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587')"></div>
                 <div class="product-info">
-                    <h3 class="product-name">奥利奥海盐蛋糕</h3>
-                    <p class="product-price">¥198/6寸</p>
+                    <h3 class="product-title">皇家红丝绒</h3>
+                    <p class="product-desc">经典红丝绒蛋糕胚搭配奶油奶酪霜，顶部装饰金箔</p >
+                    <div class="product-price">
+                        <span>¥268/6寸</span>
+                    </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1599785209707-cc9a5916c140')"></div>
+            <!-- 产品3 -->
+            <article class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1586444248902-2f64eddc13df')"></div>
                 <div class="product-info">
-                    <h3 class="product-name">梦幻草莓奶油蛋糕</h3>
-                    <p class="product-price">¥208/6寸</p>
+                    <h3 class="product-title">香草慕斯星空</h3>
+                    <p class="product-desc">马达加斯加香草慕斯，镜面淋面工艺，食用金粉装饰</p >
+                    <div class="product-price">
+                        <span>¥298/6寸</span>
+                    </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1606890737304-06624b17c4c7')"></div>
+            <!-- 产品4 -->
+            <article class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec')"></div>
                 <div class="product-info">
-                    <h3 class="product-name">焦糖榛子蛋糕</h3>
-                    <p class="product-price">¥218/6寸</p>
+                    <h3 class="product-title">栗子蒙布朗</h3>
+                    <p class="product-desc">法式传统蒙布朗，意大利栗子泥，朗姆酒风味</p >
+                    <div class="product-price">
+                        <span>¥248/6寸</span>
+                    </div>
                 </div>
-            </div>
+            </article>
+                        <!-- 产品4 -->
+            <article class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec')"></div>
+                <div class="product-info">
+                    <h3 class="product-title">栗子蒙布朗</h3>
+                    <p class="product-desc">法式传统蒙布朗，意大利栗子泥，朗姆酒风味</p >
+                    <div class="product-price">
+                        <span>¥248/6寸</span>
+                    </div>
+                </div>
+            </article>
 
-            <div class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1602511806101-88c9a143c9f9')"></div>
+            <!-- 产品4 -->
+            <article class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec')"></div>
                 <div class="product-info">
-                    <h3 class="product-name">柠檬清香蛋糕</h3>
-                    <p class="product-price">¥178/6寸</p>
-                </div>       
-            </div>
-          
-            <div class="product-card">
-                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1602511806101-88c9a143c9f9')"></div>
-                <div class="product-info">
-                    <h3 class="product-name">巧克力蛋糕</h3>
-                    <p class="product-price">¥178/6寸</p>
+                    <h3 class="product-title">栗子蒙布朗</h3>
+                    <p class="product-desc">法式传统蒙布朗，意大利栗子泥，朗姆酒风味</p >
+                    <div class="product-price">
+                        <span>¥248/6寸</span>
+                    </div>
                 </div>
-          
+            </article>
+
         </div>
-    </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>NAVYBLUE</h2>
+                <p>法式匠心 · 甜蜜美味</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>快速导航</h3>
+                <ul>
+                    <li><a href="#">主页</a></li>
+                    <li><a href="#">产品</a></li>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>联系我们</h3>
+                <p>📞 电话: 400-123-4567</p>
+                <p>📧 邮箱: contact@navyblue.com</p>
+                <div class="wechat">
+                    <p>📱 微信客服:</p>
+                    <img src="./images/wechat-qr.png" alt="WeChat QR Code">
+                </div>
+            </div>
+
+            <div class="footer-social">
+                <h3>关注我们</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="./images/wechat-icon.png" alt="WeChat"></a>
+                    <a href="#"><img src="./images/weibo-icon.png" alt="Weibo"></a>
+                    <a href="#"><img src="./images/instagram-icon.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+
+        <p class="footer-copy">© 2025 NavyBlue Bakery. All Rights Reserved.</p>
+    </footer>
+
+
+
 </body>
 </html>
-
